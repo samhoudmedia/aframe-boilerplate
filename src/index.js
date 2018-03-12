@@ -1,1 +1,1 @@
-import component from './component';
+require('./component.js');

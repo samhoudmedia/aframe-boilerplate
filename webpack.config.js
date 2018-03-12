@@ -18,5 +18,23 @@ module.exports = {
     new HtmlWebpackPlugin({
       title: 'A-Frame boilerplate',
     })
-  ]
-}
+  ],
+  devServer: {
+    overlay: {
+      errors: true,
+      warnings: false
+    }
+  },
+  module: {
+    rules: [
+      {
+        test: /\.js$/,
+        enforce: 'pre',
+        loader: "eslint-loader",
+        options: {
+          emitwarning: true,
+        }
+      },
+    ],
+  },
+};
